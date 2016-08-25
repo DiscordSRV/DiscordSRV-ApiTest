@@ -71,7 +71,7 @@
     <dependencies>
         <!-- discordsrv -->
         <dependency>
-            <groupId>com.scarsz.discordsrv</groupId>
+            <groupId>com.scarsz</groupId>
             <artifactId>DiscordSRV</artifactId>
             <version>11.666</version>
             <scope>provided</scope>
