@@ -1,0 +1,4 @@
+main: com.scarsz.discordsrv.apitest.Plugin
+version: 1.0
+name: DiscordSRV-ApiTest
+depend: [DiscordSRV]
