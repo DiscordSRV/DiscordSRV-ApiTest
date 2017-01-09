@@ -2,12 +2,12 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.scarsz</groupId>
+    <groupId>github.scarsz.discordsrv</groupId>
     <artifactId>DiscordSRV-ApiTest</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <build>
-        <finalName>${project.artifactId}-Build-${project.version}</finalName>
+        <finalName>${project.artifactId}</finalName>
         <resources>
             <resource>
                 <directory>src/main/resources</directory>
@@ -71,9 +71,9 @@
     <dependencies>
         <!-- discordsrv -->
         <dependency>
-            <groupId>com.scarsz.discordsrv</groupId>
+            <groupId>github.scarsz.discordsrv</groupId>
             <artifactId>DiscordSRV</artifactId>
-            <version>11.666</version>
+            <version>13.0</version>
             <scope>provided</scope>
         </dependency>
 
@@ -81,7 +81,7 @@
         <dependency>
             <groupId>org.bukkit</groupId>
             <artifactId>bukkit</artifactId>
-            <version>1.10.2-R0.1-SNAPSHOT</version>
+            <version>LATEST</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>
