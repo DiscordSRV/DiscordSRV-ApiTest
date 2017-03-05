@@ -1,24 +1,20 @@
 package github.scarsz.discordsrv.apitest;
 
-import github.scarsz.discordsrv.DiscordSRV.DiscordSRV;
-import github.scarsz.discordsrv.DiscordSRV.api.DiscordSRVListener;
-import org.bukkit.Bukkit;
+import github.scarsz.discordsrv.DiscordSRV;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class Plugin extends JavaPlugin {
 
-    private DiscordSRV discordSRV = (DiscordSRV) Bukkit.getPluginManager().getPlugin("DiscordSRV");
-    private DiscordSRVListener apiTestDiscordSRVListener = new ApiTestDiscordSRVListener();
+    private DiscordSRVListener discordsrvListener = new DiscordSRVListener();
 
     @Override
     public void onEnable() {
-        discordSRV.addListener(apiTestDiscordSRVListener);
-        // see everything in "discordSRV" for what you can do
+        DiscordSRV.api.subscribe(discordsrvListener);
     }
 
     @Override
     public void onDisable() {
-        discordSRV.removeListener(apiTestDiscordSRVListener);
+        DiscordSRV.api.unsubscribe(discordsrvListener);
     }
 
 }

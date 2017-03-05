@@ -6,6 +6,10 @@ Example usage of DiscordSRV's API
 <repository>
     <id>Scarsz-Jenkins</id>
     <url>http://scarsz.tech:8080/plugin/repository/everything/</url>
+    <snapshots>
+        <enabled>true</enabled>
+        <updatePolicy>always</updatePolicy>
+    </snapshots>
 </repository>
 
 ...
