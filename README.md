@@ -5,7 +5,7 @@ Example usage of DiscordSRV's API
 ```
 <repository>
     <id>Scarsz-Jenkins</id>
-    <url>http://scarsz.tech:8080/plugin/repository/everything/</url>
+    <url>http://ci.scarsz.me/plugin/repository/everything/</url>
     <snapshots>
         <enabled>true</enabled>
         <updatePolicy>always</updatePolicy>
@@ -17,7 +17,7 @@ Example usage of DiscordSRV's API
 <dependency>
     <groupId>github.scarsz.discordsrv</groupId>
     <artifactId>DiscordSRV</artifactId>
-    <version>13.0</version>
+    <version>13.6</version>
     <scope>provided</scope>
 </dependency>
 ```
