@@ -17,7 +17,7 @@ Example usage of DiscordSRV's API
 <dependency>
     <groupId>github.scarsz.discordsrv</groupId>
     <artifactId>DiscordSRV</artifactId>
-    <version>13.6</version>
+    <version>14.0</version>
     <scope>provided</scope>
 </dependency>
 ```
