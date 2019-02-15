@@ -6,10 +6,6 @@ Example usage of DiscordSRV's API
 <repository>
     <id>Scarsz-Nexus</id>
     <url>https://nexus.scarsz.me/content/groups/public/</url>
-    <snapshots>
-        <enabled>true</enabled>
-        <updatePolicy>always</updatePolicy>
-    </snapshots>
 </repository>
 
 ...
