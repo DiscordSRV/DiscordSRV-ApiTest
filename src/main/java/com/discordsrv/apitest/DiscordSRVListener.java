@@ -1,4 +1,4 @@
-package github.scarsz.discordsrv.apitest;
+package com.discordsrv.apitest;
 
 import github.scarsz.discordsrv.api.ListenerPriority;
 import github.scarsz.discordsrv.api.Subscribe;

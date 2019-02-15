@@ -1,4 +1,4 @@
-package github.scarsz.discordsrv.apitest;
+package com.discordsrv.apitest;
 
 import github.scarsz.discordsrv.DiscordSRV;
 import org.bukkit.plugin.java.JavaPlugin;
