@@ -17,3 +17,14 @@ Example usage of DiscordSRV's API
     <scope>provided</scope>
 </dependency>
 ```
+
+# Gradle
+```groovy
+repositories {
+    maven { url 'https://nexus.scarsz.me/content/groups/public/' }
+}
+
+dependencies {
+    compile 'com.discordsrv:discordsrv:1.16.6'
+}
+```
