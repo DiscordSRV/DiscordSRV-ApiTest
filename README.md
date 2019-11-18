@@ -13,7 +13,7 @@ Example usage of DiscordSRV's API
 <dependency>
     <groupId>com.discordsrv</groupId>
     <artifactId>discordsrv</artifactId>
-    <version>1.16.6</version>
+    <version>1.18.1</version>
     <scope>provided</scope>
 </dependency>
 ```
@@ -25,6 +25,6 @@ repositories {
 }
 
 dependencies {
-    compile 'com.discordsrv:discordsrv:1.16.6'
+    compile 'com.discordsrv:discordsrv:1.18.1'
 }
 ```
