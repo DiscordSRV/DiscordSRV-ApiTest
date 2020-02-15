@@ -42,7 +42,7 @@ public class DiscordSRVListener {
         if (user != null) {
 
             // opens/retrieves the private channel for the user & sends a message to it (if retrieving the private channel was successful)
-            user.openPrivateChannel().queue(privateChannel -> privateChannel.sendMessage("Your account has been unlined").queue());
+            user.openPrivateChannel().queue(privateChannel -> privateChannel.sendMessage("Your account has been unlinked").queue());
         }
 
 
