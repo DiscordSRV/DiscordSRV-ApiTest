@@ -25,6 +25,6 @@ repositories {
 }
 
 dependencies {
-    compile 'com.discordsrv:discordsrv:1.18.1'
+    compileOnly 'com.discordsrv:discordsrv:1.18.1'
 }
 ```
