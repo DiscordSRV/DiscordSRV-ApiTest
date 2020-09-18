@@ -5,7 +5,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public class Plugin extends JavaPlugin {
 
-    private DiscordSRVListener discordsrvListener = new DiscordSRVListener();
+    private DiscordSRVListener discordsrvListener = new DiscordSRVListener(this);
 
     @Override
     public void onEnable() {

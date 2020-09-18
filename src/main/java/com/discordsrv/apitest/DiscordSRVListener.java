@@ -4,7 +4,6 @@ import github.scarsz.discordsrv.DiscordSRV;
 import github.scarsz.discordsrv.api.ListenerPriority;
 import github.scarsz.discordsrv.api.Subscribe;
 import github.scarsz.discordsrv.api.events.*;
-import github.scarsz.discordsrv.dependencies.jda.api.entities.Member;
 import github.scarsz.discordsrv.dependencies.jda.api.entities.TextChannel;
 import github.scarsz.discordsrv.dependencies.jda.api.entities.User;
 import github.scarsz.discordsrv.util.DiscordUtil;
@@ -12,18 +11,36 @@ import org.bukkit.Bukkit;
 
 public class DiscordSRVListener {
 
+    private final Plugin plugin;
+
+    public DiscordSRVListener(Plugin plugin) {
+        this.plugin = plugin;
+    }
+
+    @Subscribe
+    public void discordReadyEvent(DiscordReadyEvent event) {
+        // Example of using JDA's events
+        // We need to wait until DiscordSRV has initialized JDA, thus we're doing this inside DiscordReadyEvent
+        DiscordUtil.getJda().addEventListener(new JDAListener(plugin));
+
+        // ... we can also do anything other than listen for events with JDA now,
+        plugin.getLogger().info("Chatting on Discord with " + DiscordUtil.getJda().getUsers().size() + " users!");
+        // see https://ci.dv8tion.net/job/JDA/javadoc/ for JDA's javadoc
+        // see https://github.com/DV8FromTheWorld/JDA/wiki for JDA's wiki
+    }
+
     @Subscribe(priority = ListenerPriority.MONITOR)
     public void discordMessageReceived(DiscordGuildMessageReceivedEvent event) {
         // Example of logging a message sent in Discord
 
-        Bukkit.getLogger().info("Received a chat message on Discord: " + event.getMessage());
+        plugin.getLogger().info("Received a chat message on Discord: " + event.getMessage());
     }
 
     @Subscribe(priority = ListenerPriority.MONITOR)
     public void aMessageWasSentInADiscordGuildByTheBot(DiscordGuildMessageSentEvent event) {
         // Example of logging a message sent in Minecraft (being sent to Discord)
 
-        Bukkit.getLogger().info("A message was sent to Discord: " + event.getMessage());
+        plugin.getLogger().info("A message was sent to Discord: " + event.getMessage());
     }
 
     @Subscribe
@@ -45,8 +62,6 @@ public class DiscordSRVListener {
             user.openPrivateChannel().queue(privateChannel -> privateChannel.sendMessage("Your account has been unlinked").queue());
         }
 
-
-
         // Example of sending a message to a channel called "unlinks" (defined in the config.yml using the Channels option) when a user unlinks
         TextChannel textChannel = DiscordSRV.getPlugin().getDestinationTextChannelForGameChannelName("unlinks");
 
@@ -55,7 +70,7 @@ public class DiscordSRVListener {
             textChannel.sendMessage(event.getPlayer().getName() + " (" + event.getPlayer().getUniqueId() + ") has unlinked their associated Discord account: "
                     + (event.getDiscordUser() != null ? event.getDiscordUser().getName() : "<not available>") + " (" + event.getDiscordId() + ")").queue();
         } else {
-            Bukkit.getLogger().warning("Channel called \"unlinks\" could not be found in the DiscordSRV configuration");
+            plugin.getLogger().warning("Channel called \"unlinks\" could not be found in the DiscordSRV configuration");
         }
     }
 
