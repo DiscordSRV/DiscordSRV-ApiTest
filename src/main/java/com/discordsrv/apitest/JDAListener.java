@@ -1,7 +1,7 @@
 package com.discordsrv.apitest;
 
-import net.dv8tion.jda.api.events.guild.GuildUnavailableEvent;
-import net.dv8tion.jda.api.hooks.ListenerAdapter;
+import github.scarsz.discordsrv.dependencies.jda.api.events.guild.GuildUnavailableEvent;
+import github.scarsz.discordsrv.dependencies.jda.api.hooks.ListenerAdapter;
 import org.jetbrains.annotations.NotNull;
 
 public class JDAListener extends ListenerAdapter {
