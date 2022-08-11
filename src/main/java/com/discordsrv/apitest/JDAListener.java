@@ -16,4 +16,5 @@ public class JDAListener extends ListenerAdapter {
     public void onGuildUnavailable(@NotNull GuildUnavailableEvent event) {
         plugin.getLogger().severe("Oh no " + event.getGuild().getName() + " went unavailable :(");
     }
+
 }
